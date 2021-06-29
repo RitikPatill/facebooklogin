@@ -1,3 +1,4 @@
+import 'package:facebooklogin/home2.dart';
 import 'package:flutter/material.dart';
 
 import 'home.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: Home2(),
     );
   }
 }

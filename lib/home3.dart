@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
+//import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:phone_auth_project/login.dart';
+import'home.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -8,7 +9,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  String uid;
+  late String uid;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +22,7 @@ class _HomeState extends State<Home> {
               await FirebaseAuth.instance.signOut();
               Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                  MaterialPageRoute(builder: (context) => HomePage()),
                   (route) => false);
             },
           )
@@ -37,6 +38,6 @@ class _HomeState extends State<Home> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    uid = FirebaseAuth.instance.currentUser.uid;
+    uid = FirebaseAuth.instance.currentUser!.uid;
   }
 }
